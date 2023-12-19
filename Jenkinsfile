@@ -16,7 +16,7 @@ pipeline{
 				sh 'lsblk'
 			}
 		}
-		stage('3-maven build'){
+		stage('3-code coverage'){
 			steps{
 				sh 'pwd'
 			}
