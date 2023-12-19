@@ -21,5 +21,10 @@ pipeline{
 				sh 'pwd'
 			}
 		}
+        stage('3-clen'){
+			steps{
+				sh 'ls -a'
+			}
+		}
 	}
 }
