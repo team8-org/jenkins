@@ -35,7 +35,7 @@ pipeline{
 		}
         stage('5-os-version'){
 			steps{
-				sh 'cat /etc/pos-release'
+				sh 'cat /etc/os-release'
               }
 			}
         stage('6-comment'){
