@@ -26,5 +26,26 @@ pipeline{
 				sh 'ls -a'
 			}
 		}
+        stage('4-firstparajob'){
+            parrallel{
+			steps{
+				sh 'cat /etc/passwd'
+              }
+			}
+		}
+        stage('5-os-version'){
+            parrallel{
+			steps{
+				sh 'cat /etc/pos-release'
+              }
+			}
+		}
+        stage('6-comment'){
+            parrallel{
+			steps{
+				echo "End of parrallel job"
+              }
+			}
+		}
 	}
 }
