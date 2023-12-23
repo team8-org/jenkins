@@ -32,16 +32,12 @@ pipeline{
 				sh 'cat /etc/passwd'
               }
 			}
-		}
         stage('5-os-version'){
-            parallel{
 			steps{
 				sh 'cat /etc/pos-release'
               }
 			}
-		}
         stage('6-comment'){
-            parallel{
 			steps{
 				echo "End of parrallel job"
               }
