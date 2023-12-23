@@ -21,17 +21,18 @@ pipeline{
 				sh 'pwd'
 			}
 		}
-        stage('3-clen'){
+        stage('3-clean'){
 			steps{
 				sh 'ls -a'
 			}
 		}
         stage('4-firstparajob'){
             parallel{
-			steps{
-				sh 'cat /etc/passwd'
-              }
+			  stage('3-clean'){
+			    steps{
+				  sh 'ls -a'
 			}
+		}
         stage('5-os-version'){
 			steps{
 				sh 'cat /etc/pos-release'
@@ -39,7 +40,7 @@ pipeline{
 			}
         stage('6-comment'){
 			steps{
-				echo "End of parrallel job"
+				echo "End of parallel job"
               }
 			}
 		}
