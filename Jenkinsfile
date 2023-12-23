@@ -27,21 +27,21 @@ pipeline{
 			}
 		}
         stage('4-firstparajob'){
-            parrallel{
+            parallel{
 			steps{
 				sh 'cat /etc/passwd'
               }
 			}
 		}
         stage('5-os-version'){
-            parrallel{
+            parallel{
 			steps{
 				sh 'cat /etc/pos-release'
               }
 			}
 		}
         stage('6-comment'){
-            parrallel{
+            parallel{
 			steps{
 				echo "End of parrallel job"
               }
